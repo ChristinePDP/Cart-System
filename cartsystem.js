@@ -166,7 +166,8 @@ const products = [
                                 </svg>
                             </button>
                         </div>
-                        <p class="font-bold text-orange-600">₱ ${item.price * item.quantity}</p>
+                        <p class="font-bold text-orange-600">₱ 
+                        ${item.price * item.quantity}</p>
                     </div>
                 `;
                 cartItemsContainer.appendChild(cartItem);
