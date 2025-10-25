@@ -1,42 +1,53 @@
-<!doctype html>
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meryenda Shop</title>
     <link href="./src/output.css" rel="stylesheet">
-    </head>
-    
-    <body class="min-h-screen bg-blue-100 p-8">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">
-                Tindahan ni Buding
-            </h1>
+</head>
+<body class="min-h-screen bg-amber-50 p-6">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-amber-800 mb-8 text-center">
+            Tindahan ni Buding
+        </h1>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Products Section-->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Products</h2>
-                        <div id="products" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-                    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="col-span-1 lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Products</h2>
+                    <div id="products" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
                 </div>
+            </div>
 
-                <!-- Cart Section -->
-                <div class="lg:col-span-1">
-                    <div class="bg-white rounded-lg shadow-lg p-6 sticky top-8">
-                        <div class="flex items-center gap-2 mb-6">
-                            <h2 class="text-2xl font-bold text-gray-800">Cart</h2>
-                        </div>
+            <div class="lg:col-span-1">
+                <div class="bg-gray-50 rounded-lg shadow-xl p-6 sticky top-8">
+                    <div class="flex items-center gap-2 mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Cart</h2>
+                        <span id="cartBadge" class="bg-amber-500 text-white text-sm font-bold m-3 px-2 py-1 rounded-full hidden">0</span>
+                    </div>
 
-                        <div id="emptyCart" class="text-center py-12 text-gray-400">
-                            <p>Your cart is empty</p>
-                        </div>
+                    <div id="emptyCart" class="text-center py-12 text-black">
+                        <p>Your cart is empty</p>
+                    </div>
 
+                    <div id="cartItems" class="space-y-4 mb-6 max-h-96 overflow-y-auto hidden"></div>
+
+                    <div id="cartTotal" class="border-t pt-4 hidden">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-lg font-semibold text-amber-950">Total:</span>
+                            <span id="totalPrice" class="text-2xl font-bold text-amber-900">₱0</span>
                         </div>
+                        <button class="w-full bg-amber-500 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                            Checkout
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="cartsystem.js"></script>
-    </body>
+    </div>
+
+    <script src="cartsystem.js"></script>
+</body>
 </html>
