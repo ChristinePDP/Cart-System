@@ -1,54 +1,64 @@
-const main = document.querySelector('main');
-console.log(main);
+        const main = document.querySelector('main');
+        console.log(main);
 
-const h1 = main.firstElementChild;
-console.log(h1);
+        const h1 = main.firstElementChild;
+        console.log(h1);
 
-const article = h1.nextElementSibling;
-console.log(article);
+        const article = h1.nextElementSibling;
+        console.log(article);
 
-const div = article.firstElementChild;
-console.log(div);
+        const div = article.firstElementChild;
+        console.log(div);
 
-const section = div.firstElementChild;
-console.log(section);
+        const section = div.firstElementChild;
+        console.log(section);
 
-const h2 = section.firstElementChild;
-console.log(h2);
+        const h2 = section.firstElementChild;
+        console.log(h2);
 
-const products = h2.nextElementSibling;
-console.log(products);
+        const products = h2.nextElementSibling;
+        console.log(products);
 
-console.log(products.children);
+        console.log(products.children);
 
-const product = main.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
+        const product = main.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
 
-console.log(product.children);
+        console.log(product.children);
 
-const productArray = Array.from(products.children);
-console.log(productArray);
+        const productArray = Array.from(products.children);
+        console.log(productArray);
 
-productArray.forEach((product) => {
+        const cart = main
+            .firstElementChild
+            .nextElementSibling
+            .firstElementChild
+            .nextElementSibling
+            .firstElementChild
+            .firstElementChild
+            .nextElementSibling;
+        console.log(cart);
 
-    const button = product.querySelector('button');
+        productArray.forEach((product) => {
+            const button = product.querySelector('button');
 
-    button.addEventListener('click', () => {
-        const h5 = document.createElement('h5');
-        h5.innertext = button.firstElementSibling;
-        cart.appendChild(product);
-    });
-});
+                button.addEventListener('click', () => {
+                const h3 = product.firstElementChild;
+                const p = h3.nextElementSibling;
+                
+                const div = document.createElement('div');
+                div.className = 'mb-2 flex justify-between items-center bg-amber-50 p-3 rounded-lg border border-amber-200';
+                cart.appendChild(div);
 
-const cart = main
-    .firstElementChild
-    .nextElementSibling
-    .firstElementChild
-    .nextElementSibling
-    .firstElementChild
-    .firstElementChild
-    .nextElementSibling
-    ;
-console.log(cart);
+                const name = document.createElement('span');
+                name.innerText = h3.innerText;
+                name.className = 'font-semibold text-gray-900';
+                div.appendChild(name);
+
+                const price = document.createElement('span');
+                price.innerText = p.innerText;
+                price.className = 'font-bold text-amber-900';
+                div.appendChild(price);
 
 
-
+            });
+        });
