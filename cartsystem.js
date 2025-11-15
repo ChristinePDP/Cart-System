@@ -45,17 +45,17 @@ productArray.forEach((product) => {
         const p = h3.nextElementSibling;
         
         const div = document.createElement('div');
-        div.className = 'mb-2 flex justify-between items-center bg-amber-50 p-3 rounded-lg border border-amber-200';
+        div.className = 'animate-slideIn mb-2 flex justify-between items-center bg-amber-50 p-3 rounded-lg border border-amber-200';
         cart.appendChild(div);
 
         const name = document.createElement('span');
         name.innerText = h3.innerText;
-        name.className = 'font-semibold text-gray-900';
+        name.className = ' animate-slideIn font-semibold text-gray-900';
         div.appendChild(name);
 
         const price = document.createElement('span');
         price.innerText = p.innerText;
-        price.className = 'font-bold text-amber-900';
+        price.className = 'animate-slideIn font-bold text-amber-900';
         div.appendChild(price);
     });
 });
